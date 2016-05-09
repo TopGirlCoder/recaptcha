@@ -7,15 +7,15 @@ describe Recaptcha::Configuration do
     end
 
     it "servers the default for nil" do
-      Recaptcha.configuration.api_server_url(ssl: nil).must_equal "//www.google.com/recaptcha/api.js"
+      Recaptcha.configuration.api_server_url(nil).must_equal "//www.google.com/recaptcha/api.js"
     end
 
     it "knows ssl" do
-      Recaptcha.configuration.api_server_url(ssl: true).must_equal "https://www.google.com/recaptcha/api.js"
+      Recaptcha.configuration.api_server_url(true).must_equal "https://www.google.com/recaptcha/api.js"
     end
 
     it "knows non-ssl" do
-      Recaptcha.configuration.api_server_url(ssl: false).must_equal "//www.google.com/recaptcha/api.js"
+      Recaptcha.configuration.api_server_url(false).must_equal "//www.google.com/recaptcha/api.js"
     end
   end
 
